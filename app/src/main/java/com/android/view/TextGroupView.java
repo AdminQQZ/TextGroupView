@@ -14,6 +14,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -413,29 +414,36 @@ public class TextGroupView extends LinearLayout {
         //设置内容对齐方式
         setGravity(Gravity.CENTER_VERTICAL);
         //添加视图（ImageView + TextView +TextView + EditText + ImageView + ImageView）
+
         leftImageView = new ImageView(context);
         leftImageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(leftImageView);
+
         leftTextView = new TextView(context);
         leftTextView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(leftTextView);
+
         centerTextView = new TextView(context);
         centerTextView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(centerTextView);
+
         rightTextView = new TextView(context);
         rightTextView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(rightTextView);
+
         // 文本控件
         editView = new EditText(context);
         editView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         addView(editView);
-
+        // 图标
         centerImageView = new ImageView(context);
         centerImageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(centerImageView);
+
         rightImageView = new ImageView(context);
         rightImageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(rightImageView);
+
         //左边图标
         leftImageView.setImageResource(leftImageSrc);
         leftImageView.setBackgroundResource(leftImageBackground);
@@ -469,6 +477,7 @@ public class TextGroupView extends LinearLayout {
         if (!TextUtils.isEmpty(editText)) {
             editView.setText(editText);
         }
+
         editView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(editMaxLength)});
         editView.setTextColor(editTextColor);
         editView.setFocusable(editFocusable);
@@ -479,6 +488,7 @@ public class TextGroupView extends LinearLayout {
         if (editMaxLines != 0) {
             editView.setMaxLines(editMaxLines);
         }
+
         editView.setEllipsize(truncateAts[editEllipsize]);
         editView.setInputType(inputTypes[editInputType]);
         editView.setText(editText);
@@ -488,18 +498,21 @@ public class TextGroupView extends LinearLayout {
         if (!TextUtils.isEmpty(editDigits)) {
             editView.setKeyListener(DigitsKeyListener.getInstance(editDigits));
         }
+
         //中间图标
         setMarginPaddingWeight(centerImageView, centerImageMargin, centerImageMarginLeft, centerImageMarginTop, centerImageMarginRight, centerImageMarginBottom, centerImagePadding, centerImagePaddingLeft, centerImagePaddingTop, centerImagePaddingRight, centerImagePaddingBottom, -1);
         centerImageView.setImageResource(centerImageSrc);
         centerImageView.setBackgroundResource(centerImageBackground);
         centerImageView.setScaleType(scaleTypes[centerImageScaleType]);
         setParams(centerImageView, centerImageWidth, centerImageHeight);
+
         //右边图标
         setMarginPaddingWeight(rightImageView, rightImageMargin, rightImageMarginLeft, rightImageMarginTop, rightImageMarginRight, rightImageMarginBottom, rightImagePadding, rightImagePaddingLeft, rightImagePaddingTop, rightImagePaddingRight, rightImagePaddingBottom, -1);
         rightImageView.setImageResource(rightImageSrc);
         rightImageView.setBackgroundResource(rightImageBackground);
         rightImageView.setScaleType(scaleTypes[rightImageScaleType]);
         setParams(rightImageView, rightImageWidth, rightImageHeight);
+
         //全属性
         setAllTextSize();
         setAllTextColor();
