@@ -259,7 +259,7 @@ public class TextGroupView extends LinearLayout {
      * 初始化属性
      *
      * @param context 上下文
-     * @param attrs   属性
+     * @param attrs 属性
      */
     private void initAttrs(Context context, AttributeSet attrs) {
         if (attrs != null) {
@@ -425,9 +425,11 @@ public class TextGroupView extends LinearLayout {
         rightTextView = new TextView(context);
         rightTextView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(rightTextView);
+        // 文本控件
         editView = new EditText(context);
         editView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         addView(editView);
+
         centerImageView = new ImageView(context);
         centerImageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(centerImageView);
@@ -517,8 +519,8 @@ public class TextGroupView extends LinearLayout {
     /**
      * 设置宽高
      *
-     * @param view   控件
-     * @param width  宽度
+     * @param view 控件
+     * @param width 宽度
      * @param height 高度
      */
     private void setParams(View view, int width, int height) {
@@ -579,18 +581,18 @@ public class TextGroupView extends LinearLayout {
     /**
      * 设置View间距、内间距、权重
      *
-     * @param view          控件
-     * @param margin        间距（左、上、右、下同时）
-     * @param leftMargin    左间距
-     * @param topMargin     上间距
-     * @param rightMargin   右间距
-     * @param bottomMargin  底部间距
-     * @param padding       内间距（左、上、右、下同时）
-     * @param leftPadding   左内间距
-     * @param topPadding    右内间距
-     * @param rightPadding  右内间距
+     * @param view 控件
+     * @param margin 间距（左、上、右、下同时）
+     * @param leftMargin 左间距
+     * @param topMargin 上间距
+     * @param rightMargin 右间距
+     * @param bottomMargin 底部间距
+     * @param padding 内间距（左、上、右、下同时）
+     * @param leftPadding 左内间距
+     * @param topPadding 右内间距
+     * @param rightPadding 右内间距
      * @param bottomPadding 底部内间距
-     * @param weight        权重
+     * @param weight 权重
      */
     private void setMarginPaddingWeight(View view, int margin, int leftMargin, int topMargin, int rightMargin, int bottomMargin, int padding, int leftPadding, int topPadding, int rightPadding, int bottomPadding, float weight) {
         LinearLayout.LayoutParams params = (LayoutParams) view.getLayoutParams();
@@ -617,7 +619,7 @@ public class TextGroupView extends LinearLayout {
     /**
      * 设置权重
      *
-     * @param view   控件
+     * @param view 控件
      * @param weight 权重
      */
     private void setWeight(View view, float weight) {
@@ -631,11 +633,11 @@ public class TextGroupView extends LinearLayout {
     /**
      * 设置外边距
      *
-     * @param view         控件
-     * @param margin       边距（左上右下）
-     * @param leftMargin   左边距
-     * @param topMargin    上边距
-     * @param rightMargin  右边距
+     * @param view 控件
+     * @param margin 边距（左上右下）
+     * @param leftMargin 左边距
+     * @param topMargin 上边距
+     * @param rightMargin 右边距
      * @param bottomMargin 底部间距
      */
     private void setMargin(View view, int margin, int leftMargin, int topMargin, int rightMargin, int bottomMargin) {
@@ -656,11 +658,11 @@ public class TextGroupView extends LinearLayout {
     /**
      * 设置内间距
      *
-     * @param view          控件
-     * @param padding       内间距（左上右下）
-     * @param leftPadding   左内间距
-     * @param topPadding    上内间距
-     * @param rightPadding  右内间距
+     * @param view 控件
+     * @param padding 内间距（左上右下）
+     * @param leftPadding 左内间距
+     * @param topPadding 上内间距
+     * @param rightPadding 右内间距
      * @param bottomPadding 底部内间距
      */
     private void setPadding(View view, int padding, int leftPadding, int topPadding, int rightPadding, int bottomPadding) {
@@ -679,14 +681,14 @@ public class TextGroupView extends LinearLayout {
      * this method create you self background drawable
      * by shape.the same as code in xml.
      *
-     * @param shape             类型 GradientDrawable.RECTANGLE  GradientDrawable.OVAL
-     * @param strokeWidth       外线宽度 button stroke width
-     * @param strokeColor       外线颜色 button stroke color
-     * @param solidColor        填充颜色 button background color
-     * @param cornerRadius      圆角大小 all corner is the same as is the radius
-     * @param topLeftRadius     左上圆角 top left corner radius
-     * @param topRightRadius    右上圆角 top right corner radius
-     * @param bottomLeftRadius  底左圆角  bottom left corner radius
+     * @param shape 类型 GradientDrawable.RECTANGLE  GradientDrawable.OVAL
+     * @param strokeWidth 外线宽度 button stroke width
+     * @param strokeColor 外线颜色 button stroke color
+     * @param solidColor 填充颜色 button background color
+     * @param cornerRadius 圆角大小 all corner is the same as is the radius
+     * @param topLeftRadius 左上圆角 top left corner radius
+     * @param topRightRadius 右上圆角 top right corner radius
+     * @param bottomLeftRadius 底左圆角  bottom left corner radius
      * @param bottomRightRadius 底右圆角 bottom right corner radius
      * @return
      */
